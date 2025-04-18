@@ -11,7 +11,7 @@
 <body class="bg-white dark:bg-black text-gray-900 dark:text-white">
   <div class="w-full min-h-screen flex flex-col gap-4 p-4 bg-slate-100 dark:bg-slate-800">
 
-   
+   <!-- שימור החלק העליון המקורי -->
     <header class="p-4 bg-slate-700 text-white flex justify-between items-center rounded shadow-md">
       
       <nav class="flex items-center gap-6">
@@ -64,7 +64,7 @@
       </nav>
     
       <div class="flex items-center gap-6">
-        <!-- Improved Notification Component with Animated Bell Icon -->
+        <!-- התראות עם אנימציה -->
         <div class="relative group">
           <button class="relative flex items-center justify-center w-10 h-10 rounded-full hover:bg-slate-600 transition-colors">
             <!-- Bell Icon with Animation -->
@@ -119,7 +119,7 @@
             </div>
           </div>
         </div>
-        <!-- Teacher profile -->
+        <!-- פרופיל המרצה -->
         <div class="flex items-center gap-3 pr-4 border-r border-slate-500">
           <div class="flex flex-col items-end">
             <span class="font-medium">Dr. Sarah Johnson</span>
@@ -130,7 +130,7 @@
           </div>
         </div>
     
-        <!-- Logout -->
+        <!-- התנתקות -->
         <div class="flex items-center gap-4">
           <a href="#" class="bg-red-500 hover:bg-red-600 text-white py-1 px-3 rounded transition-colors flex items-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
@@ -146,85 +146,101 @@
       </div>
     </header>
     
-
-    
-
-  <!-- Main Content -->
+  <!-- תוכן ראשי - עם כפתור פתיחת עורך במקום להציג את כל העורך ישירות -->
   <main class="flex-1 bg-slate-200 dark:bg-slate-600 p-6 rounded">
     <h1 class="text-3xl font-bold mb-2">Create a New Class</h1>
     <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">Use the form to create a new class and choose how to assign an exam:</p>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <!-- Form block -->
+      <!-- טופס -->
       <div class="p-4 bg-white dark:bg-slate-700 rounded shadow md:col-span-2">
         <form id="classForm" class="space-y-4">
-      <!-- Class Info -->
-      <div class="mb-4">
-        <label class="block mb-1 font-medium">Class Code:</label>
-        <input type="text" id="classCode" class="w-full p-2 border rounded dark:bg-slate-700 dark:text-white" placeholder="e.g. MATH2025-A" />
-      </div>
+          <!-- פרטי הכיתה -->
+          <div class="mb-4">
+            <label class="block mb-1 font-medium">Class Code:</label>
+            <input type="text" id="classCode" class="w-full p-2 border rounded dark:bg-slate-700 dark:text-white" placeholder="e.g. MATH2025-A" />
+          </div>
 
-      <div>
-        <label class="block mb-1 font-medium">Class Name:</label>
-        <input type="text" id="className" class="w-full p-2 border rounded dark:bg-slate-700 dark:text-white" />
-      </div>
+          <div>
+            <label class="block mb-1 font-medium">Class Name:</label>
+            <input type="text" id="className" class="w-full p-2 border rounded dark:bg-slate-700 dark:text-white" />
+          </div>
 
-      <!-- Subject Selection -->
-      <div>
-        <label class="block mb-1 font-medium">Subject:</label>
-        <select id="subjectSelect" class="w-full p-2 border rounded dark:bg-slate-700 dark:text-white">
-          <option value="">Select a subject</option>
-          <option value="mathematics">Mathematics</option>
-          <option value="physics">Physics</option>
-          <option value="computerscience">Computer Science</option>
-        </select>
-      </div>
+          <!-- בחירת מקצוע -->
+          <div>
+            <label class="block mb-1 font-medium">Subject:</label>
+            <select id="subjectSelect" class="w-full p-2 border rounded dark:bg-slate-700 dark:text-white">
+              <option value="">Select a subject</option>
+              <option value="mathematics">Mathematics</option>
+              <option value="physics">Physics</option>
+              <option value="computerscience">Computer Science</option>
+            </select>
+          </div>
 
-      <!-- Exam Type -->
-      <div>
-        <label class="block mb-1 font-medium">Choose how to create an exam:</label>
-        <div class="flex flex-col gap-2">
-          <label class="flex items-center gap-2">
-            <input type="radio" name="examOption" value="manual" class="accent-blue-600" />
-            <span>Create exam manually (10 questions)</span>
-          </label>
-          <label class="flex items-center gap-2">
-            <input type="radio" name="examOption" value="auto" class="accent-blue-600" />
-            <span>Let the system generate the exam automatically</span>
-          </label>
-        </div>
-      </div>
+          <!-- סוג מבחן -->
+          <div>
+            <label class="block mb-1 font-medium">Choose how to create an exam:</label>
+            <div class="flex flex-col gap-2">
+              <label class="flex items-center gap-2">
+                <input type="radio" name="examOption" value="manual" class="accent-blue-600" />
+                <span>Create exam manually (max 10 questions)</span>
+              </label>
+              <label class="flex items-center gap-2">
+                <input type="radio" name="examOption" value="auto" class="accent-blue-600" />
+                <span>Let the system generate the exam automatically</span>
+              </label>
+            </div>
+          </div>
 
-      <!-- Manual Exam Form -->
-      <div id="manualExam" class="hidden border-t pt-4">
-        <h2 class="text-lg font-semibold mb-2">Create Exam Questions</h2>
-        <div id="questionFields" class="space-y-4">
-          <!-- The question form will be rendered here by JavaScript -->
-        </div>
-      </div>
+          <!-- במקום להציג את עורך השאלות ישירות, נציג כפתור שפותח חלון מודאלי -->
+          <div id="manualExam" class="hidden border-t pt-4">
+            <div class="flex items-center justify-between mb-2">
+              <h2 class="text-lg font-semibold">Exam Questions</h2>
+              <span id="questionCounter" class="px-3 py-1 bg-blue-600 text-white text-sm rounded-full">0/10</span>
+            </div>
+            
+            <button type="button" id="openExamEditorBtn" class="w-full py-3 bg-blue-600 text-white rounded hover:bg-blue-700 flex items-center justify-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+              </svg>
+              <span>Open Exam Editor</span>
+            </button>
+            
+            <!-- אזור תצוגה מקדימה של השאלות שנוספו -->
+            <div id="questionsPreview" class="mt-4 p-3 bg-slate-800 rounded">
+              <div id="noQuestionsMsg" class="text-center text-gray-400 py-2">
+                No questions added yet. Click the button above to add questions.
+              </div>
+              
+              <div id="questionsPreviewList" class="hidden space-y-2">
+                <!-- כאן יתווספו תצוגות מקדימות של השאלות שנוספו -->
+              </div>
+            </div>
+          </div>
 
-      <!-- Auto Exam Section -->
-      <div id="autoExam" class="hidden border-t pt-4">
-        <h2 class="text-lg font-semibold mb-2">System-Generated Exam</h2>
-        <div class="space-y-2 mb-4">
-          <label>Select difficulty:</label>
-          <select id="difficultySelect" class="w-full p-2 border rounded dark:bg-slate-700 dark:text-white">
-            <option value="easy">Easy</option>
-            <option value="medium">Medium</option>
-            <option value="hard">Hard</option>
-          </select>
-        </div>
+          <!-- מבחן אוטומטי - נשאר כמו במקור -->
+          <div id="autoExam" class="hidden border-t pt-4">
+            <h2 class="text-lg font-semibold mb-2">System-Generated Exam</h2>
+            <div class="space-y-2 mb-4">
+              <label>Select difficulty:</label>
+              <select id="difficultySelect" class="w-full p-2 border rounded dark:bg-slate-700 dark:text-white">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+              </select>
+            </div>
 
-        <div id="autoPreview" class="hidden">
-          <button id="viewFullExamBtn" type="button" class="mt-6 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">
-            View Full Exam
-          </button>
-        </div>
-      </div>
+            <div id="autoPreview" class="hidden">
+              <button id="viewFullExamBtn" type="button" class="mt-6 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">
+                View Full Exam
+              </button>
+            </div>
+          </div>
 
-      <!-- Submit -->
-      <button type="submit" id="createClassBtn" class="mt-6 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Create Class</button>
-    </form>
+          <!-- כפתור שליחה -->
+          <button type="submit" id="createClassBtn" class="mt-6 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Create Class</button>
+        </form>
       </div>
     </div>
   </main>
@@ -235,11 +251,177 @@
   </footer>
 </div>
 
+<!-- חלון מודאלי לעריכת שאלות המבחן - עם Tailwind במקום CSS ישיר -->
+<div id="examEditorModal" class="hidden fixed inset-0 z-50 overflow-y-auto pointer-events-none">
+  <!-- Modal container without dark overlay -->
+  <div class="pointer-events-auto relative bg-slate-900 mx-auto my-8 rounded-lg w-11/12 max-w-5xl max-h-[90vh] shadow-xl flex flex-col">
+    <div class="p-4 border-b border-slate-700 flex justify-between items-center">
+      <h2 class="text-xl font-bold text-white">Exam Question Editor</h2>
+      <span class="text-2xl cursor-pointer p-2 leading-none text-white">&times;</span>
+    </div>
+    
+    <div class="p-4 flex-1 overflow-y-auto text-white">
+      <div class="flex justify-between items-center mb-3">
+        <div>
+          <span class="inline-block bg-blue-600 text-white rounded-full text-sm px-3 py-1 mb-2">Added Questions: <span id="modalQuestionCount">0/10</span></span>
+        </div>
+      </div>
+      
+      <!-- טופס יצירת/עריכת שאלה -->
+      <div id="questionForm" class="p-4 bg-slate-900 rounded mb-4">
+        <div class="mb-3">
+          <label class="block mb-1 font-medium">Question Type:</label>
+          <select id="questionType" class="w-full p-2 border border-slate-700 rounded bg-slate-800 text-white">
+            <option value="multiple-choice">Multiple Choice</option>
+            <option value="true-false">True/False</option>
+          </select>
+        </div>
+        
+        <div class="mb-3">
+          <label class="block mb-1 font-medium">Question Text:</label>
+          <textarea id="questionText" class="w-full p-2 border border-slate-700 rounded bg-slate-800 text-white" rows="3" placeholder="Enter your question here..."></textarea>
+        </div>
+        
+        <!-- אפשרויות בחירה מרובה -->
+        <div id="multipleChoiceOptions" class="mb-3">
+          <label class="block mb-1 font-medium">Answer Options:</label>
+          <div class="space-y-2">
+            <div class="flex items-center gap-2">
+              <input type="radio" name="correctOption" value="0" checked class="accent-blue-600" />
+              <input type="text" class="option-text w-full p-2 border border-slate-700 rounded bg-slate-800 text-white" placeholder="Option 1" />
+            </div>
+            <div class="flex items-center gap-2">
+              <input type="radio" name="correctOption" value="1" class="accent-blue-600" />
+              <input type="text" class="option-text w-full p-2 border border-slate-700 rounded bg-slate-800 text-white" placeholder="Option 2" />
+            </div>
+            <div class="flex items-center gap-2">
+              <input type="radio" name="correctOption" value="2" class="accent-blue-600" />
+              <input type="text" class="option-text w-full p-2 border border-slate-700 rounded bg-slate-800 text-white" placeholder="Option 3" />
+            </div>
+            <div class="flex items-center gap-2">
+              <input type="radio" name="correctOption" value="3" class="accent-blue-600" />
+              <input type="text" class="option-text w-full p-2 border border-slate-700 rounded bg-slate-800 text-white" placeholder="Option 4" />
+            </div>
+          </div>
+        </div>
+        
+        <!-- אפשרויות נכון/לא נכון -->
+        <div id="trueFalseOptions" class="mb-3 hidden">
+          <label class="block mb-1 font-medium">Correct Answer:</label>
+          <div class="flex items-center gap-4">
+            <label class="flex items-center gap-2">
+              <input type="radio" name="trueFalseAnswer" value="true" checked class="accent-blue-600" />
+              <span>True</span>
+            </label>
+            <label class="flex items-center gap-2">
+              <input type="radio" name="trueFalseAnswer" value="false" class="accent-blue-600" />
+              <span>False</span>
+            </label>
+          </div>
+        </div>
+        
+        <div class="flex justify-end">
+          <button type="button" id="addQuestionBtn" class="px-4 py-2 bg-blue-600 text-white rounded font-medium transition-all hover:bg-blue-700">
+            Add Question
+          </button>
+        </div>
+      </div>
+      
+      <!-- רשימת שאלות שנוספו -->
+      <h3 class="font-medium mb-4 text-lg">Added Questions:</h3>
+      <div id="questionsList" class="space-y-5">
+        <!-- כאן יתווספו השאלות שנוספו -->
+        <div id="emptyQuestionsList" class="p-3 text-center text-gray-400 border border-dashed border-gray-500 rounded">
+          No questions added yet. Use the form above to add questions.
+        </div>
+        
+        <!-- דוגמה למבנה שאלה שנוספה -->
+        <div class="bg-slate-800 border border-slate-700 rounded-lg p-4 question-card hidden">
+          <div class="flex justify-between items-start mb-2">
+            <div class="flex items-center">
+              <span class="font-medium text-white mr-2">Question 1 -</span>
+              <span class="text-gray-300">True/False</span>
+            </div>
+            <button class="text-blue-400 hover:text-blue-300 transition-colors">Edit</button>
+          </div>
+          
+          <div class="mb-3 text-white">What is the question text that will appear here?</div>
+          
+          <div class="pl-4 text-green-400 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span>Correct answer: True</span>
+          </div>
+        </div>
+        
+        <!-- דוגמה לשאלה רב-ברירה -->
+        <div class="bg-slate-800 border border-slate-700 rounded-lg p-4 question-card hidden">
+          <div class="flex justify-between items-start mb-2">
+            <div class="flex items-center">
+              <span class="font-medium text-white mr-2">Question 2 -</span>
+              <span class="text-gray-300">Multiple Choice</span>
+            </div>
+            <button class="text-blue-400 hover:text-blue-300 transition-colors">Edit</button>
+          </div>
+          
+          <div class="mb-3 text-white">What is the capital of France?</div>
+          
+          <div class="space-y-1 mb-2 pl-4">
+            <div class="text-gray-300">A. London</div>
+            <div class="text-gray-300">B. Berlin</div>
+            <div class="text-gray-300">C. Rome</div>
+            <div class="flex items-center text-green-400">
+              <span>D. Paris</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="p-4 border-t border-slate-700 flex justify-end gap-2">
+      <button type="button" class="px-4 py-2 bg-gray-600 text-white rounded font-medium hover:bg-gray-700 transition-all close-modal-btn">Cancel</button>
+      <button type="button" id="saveExamBtn" class="px-4 py-2 bg-blue-600 text-white rounded font-medium hover:bg-blue-700 transition-all">Save Exam</button>
+    </div>
   </div>
+</div>
 
-  <!-- Scripts -->
-  <script src="main-create-class.js"></script>
-  <script src="manual-exam.js"></script>
-  <script src="auto-exam.js"></script>
+<!-- Tailwind classes for question cards (replacing the previous CSS) -->
+<style>
+  @keyframes shake {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(15deg); }
+    20% { transform: rotate(-15deg); }
+    30% { transform: rotate(10deg); }
+    40% { transform: rotate(-10deg); }
+    50% { transform: rotate(5deg); }
+    60% { transform: rotate(-5deg); }
+    70% { transform: rotate(2deg); }
+    80% { transform: rotate(-2deg); }
+    90% { transform: rotate(1deg); }
+    100% { transform: rotate(0deg); }
+  }
+  .bell-shake {
+    animation: shake 1.5s ease-in-out infinite;
+    transform-origin: 50% 0%;
+  }
+  
+  /* Add the question-card class as Tailwind doesn't have a built-in hover transform */
+  .question-card {
+    transition-property: transform;
+    transition-duration: 0.2s;
+  }
+  .question-card:hover {
+    transform: translateY(-2px);
+  }
+</style>
+
+<!-- Scripts -->
+<script src="main-create-class.js"></script>
+<script src="manual-exam.js"></script>
+<script src="auto-exam.js"></script> 
 </body>
 </html>
