@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Instructor Dashboard</title>
+    <link href="/style.css" rel="stylesheet">
+    <!-- חשוב לטעון את קבצי ה-JS לפני סגירת ה-head -->
+    <script src="notification.js" defer></script>
+    <script src="recentactivity.js" defer></script>
+  </head>
+  <body class="bg-white dark:bg-black text-gray-900 dark:text-white">
+    <div class="w-full min-h-screen flex flex-col gap-4 p-4 bg-slate-100 dark:bg-slate-800">
+
+      <header class="p-4 bg-slate-700 text-white flex justify-between items-center rounded shadow-md">
+      
+        <nav class="flex items-center gap-6">
+          <a href="index.html" class="font-bold hover:text-blue-300 transition-colors flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                 class="lucide lucide-layout-dashboard">
+              <rect width="7" height="9" x="3" y="3" rx="1"/>
+              <rect width="7" height="5" x="14" y="3" rx="1"/>
+              <rect width="7" height="9" x="14" y="12" rx="1"/>
+              <rect width="7" height="5" x="3" y="16" rx="1"/>
+            </svg>
+            <span>Home</span>
+          </a>
+      
+          <a href="View_Classes.html" class="font-bold hover:text-blue-300 transition-colors flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                 class="lucide lucide-book-open">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+            </svg>
+            <span>My Classes</span>
+          </a>
+      
+          <a href="all_reports.html" class="font-bold hover:text-blue-300 transition-colors flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                 class="lucide lucide-clipboard-list">
+              <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+              <path d="M15 2H9a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1Z"/>
+              <path d="M12 11h4"/>
+              <path d="M12 16h4"/>
+              <path d="M8 11h.01"/>
+              <path d="M8 16h.01"/>
+            </svg>
+            <span>Student Reports</span>
+          </a>
+      
+          <a href="Create_New_Class.html" class="font-bold hover:text-blue-300 transition-colors flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                 class="lucide lucide-plus-circle">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="12" y1="8" x2="12" y2="16" />
+              <line x1="8" y1="12" x2="16" y2="12" />
+            </svg>
+            <span>Create Class</span>
+          </a>
+        </nav>
+      
+        <div class="flex items-center gap-6">
+          <!-- Improved Notification Component with Animated Bell Icon -->
+          <div class="relative group">
+            <button class="relative flex items-center justify-center w-10 h-10 rounded-full hover:bg-slate-600 transition-colors">
+              <!-- Bell Icon with Animation -->
+              <style>
+                @keyframes shake {
+                  0% { transform: rotate(0deg); }
+                  10% { transform: rotate(15deg); }
+                  20% { transform: rotate(-15deg); }
+                  30% { transform: rotate(10deg); }
+                  40% { transform: rotate(-10deg); }
+                  50% { transform: rotate(5deg); }
+                  60% { transform: rotate(-5deg); }
+                  70% { transform: rotate(2deg); }
+                  80% { transform: rotate(-2deg); }
+                  90% { transform: rotate(1deg); }
+                  100% { transform: rotate(0deg); }
+                }
+                .bell-shake {
+                  animation: shake 1.5s ease-in-out infinite;
+                  transform-origin: 50% 0%;
+                }
+              </style>
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="bell-shake">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+              </svg>
+              
+              <!-- Notification Badge -->
+              <span id="notification-count" class="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full shadow-sm border border-slate-700 animate-pulse">
+                0
+              </span>
+            </button>
+            
+            <!-- Dropdown Menu (hidden by default, shown on hover/click) -->
+            <div class="absolute right-0 mt-2 w-80 bg-white text-gray-800 rounded-lg shadow-lg overflow-hidden z-50 transform opacity-0 scale-95 invisible group-hover:opacity-100 group-hover:scale-100 group-hover:visible transition-all duration-200 origin-top-right">
+              <!-- Notification Header -->
+              <div class="px-4 py-3 bg-slate-100 border-b border-gray-200 flex justify-between items-center">
+                <h3 id="notifications-header" class="font-bold text-sm">Notifications (0)</h3>
+                <button class="text-xs text-blue-600 hover:text-blue-800 font-medium">Mark all as read</button>
+              </div>
+              
+              <!-- Notification Items -->
+              <div id="notifications-container" class="max-h-80 overflow-y-auto">
+                <div class="p-4 text-center text-gray-500">
+                  Loading notifications...
+                </div>
+              </div>
+              
+              <!-- View All Footer -->
+              <div class="p-3 text-center bg-slate-50 border-t border-gray-200">
+                <a href="#" class="text-sm text-blue-600 font-medium hover:text-blue-800 transition-colors">View all notifications</a>
+              </div>
+            </div>
+          </div>
+          <!-- Teacher profile -->
+          <div class="flex items-center gap-3 pr-4 border-r border-slate-500">
+            <div class="flex flex-col items-end">
+              <span class="font-medium">Dr. Sarah Johnson</span>
+              <span class="text-sm text-slate-300">Mathematics</span>
+            </div>
+            <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-blue-400">
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Teacher profile" class="w-full h-full object-cover" />
+            </div>
+          </div>
+      
+          <!-- Logout -->
+          <div class="flex items-center gap-4">
+            <a href="#" class="bg-red-500 hover:bg-red-600 text-white py-1 px-3 rounded transition-colors flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                   class="lucide lucide-log-out">
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                <polyline points="16 17 21 12 16 7"/>
+                <line x1="21" x2="9" y1="12" y2="12"/>
+              </svg>
+              <span>Logout</span>
+            </a>
+          </div>
+        </div>
+      </header>
+      
+
+      <main class="flex-1 bg-slate-200 dark:bg-slate-600 p-6 rounded">
+        <h1 class="text-3xl font-bold mb-2">Welcome back, Dr. Sarah Johnson 👋</h1>
+        <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">Here's your dashboard overview:</p>
+
+        <!-- נתונים סטטיסטיים ראשונים - Dashboard Statistics -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="bg-white dark:bg-slate-700 p-4 rounded shadow">
+            <div class="flex items-center gap-3">
+              <div class="p-2 bg-indigo-100 text-indigo-600 dark:bg-indigo-900 dark:text-indigo-300 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-sm text-gray-500 dark:text-gray-400">Active Classes</h3>
+                <p class="text-2xl font-bold">3</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white dark:bg-slate-700 p-4 rounded shadow">
+            <div class="flex items-center gap-3">
+              <div class="p-2 bg-teal-100 text-teal-600 dark:bg-teal-900 dark:text-teal-300 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-sm text-gray-500 dark:text-gray-400">Total Students</h3>
+                <p class="text-2xl font-bold">78</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white dark:bg-slate-700 p-4 rounded shadow">
+            <div class="flex items-center gap-3">
+              <div class="p-2 bg-amber-100 text-amber-600 dark:bg-amber-900 dark:text-amber-300 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-sm text-gray-500 dark:text-gray-400">Exams Completed</h3>
+                <p class="text-2xl font-bold">42</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- פעולות וכפתורים באמצע -->
+        <div class="mt-8">
+          <h2 class="text-xl font-bold mb-4">Quick Actions</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <!-- Create New Class -->
+            <div class="p-6 bg-white dark:bg-slate-700 rounded shadow hover:shadow-md transition-shadow flex flex-col h-full">
+              <div>
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="p-2 bg-blue-100 text-blue-600 dark:bg-blue-900 dark:text-blue-300 rounded-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10" />
+                      <line x1="12" y1="8" x2="12" y2="16" />
+                      <line x1="8" y1="12" x2="16" y2="12" />
+                    </svg>
+                  </div>
+                  <h2 class="text-xl font-bold">Create New Class</h2>
+                </div>
+                <p class="text-sm text-gray-500 dark:text-gray-300 mb-4">Open a new class and assign an exam directly during setup.</p>
+              </div>
+              <div class="mt-auto">
+                <a href="Create_New_Class.html" class="bg-blue-600 text-white py-2 px-6 rounded hover:bg-blue-700 text-center inline-block transition-colors">Start</a>
+              </div>
+            </div>
+
+            <!-- Manage My Classes -->
+            <div class="p-6 bg-white dark:bg-slate-700 rounded shadow hover:shadow-md transition-shadow flex flex-col h-full">
+              <div>
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="p-2 bg-green-100 text-green-600 dark:bg-green-900 dark:text-green-300 rounded-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                    </svg>
+                  </div>
+                  <h2 class="text-xl font-bold">Manage My Classes</h2>
+                </div>
+                <p class="text-sm text-gray-500 dark:text-gray-300 mb-4">View students and progress for each class you created.</p>
+              </div>
+              <div class="mt-auto">
+                <a href="View_Classes.html" class="bg-green-600 text-white py-2 px-6 rounded hover:bg-green-700 text-center inline-block transition-colors">View Classes</a>
+              </div>
+            </div>
+
+            <!-- All Student Reports -->
+            <div class="p-6 bg-white dark:bg-slate-700 rounded shadow hover:shadow-md transition-shadow flex flex-col h-full">
+              <div>
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="p-2 bg-purple-100 text-purple-600 dark:bg-purple-900 dark:text-purple-300 rounded-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+                      <path d="M15 2H9a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1Z"/>
+                      <path d="M12 11h4"/>
+                      <path d="M12 16h4"/>
+                      <path d="M8 11h.01"/>
+                      <path d="M8 16h.01"/>
+                    </svg>
+                  </div>
+                  <h2 class="text-xl font-bold">All Student Reports</h2>
+                </div>
+                <p class="text-sm text-gray-500 dark:text-gray-300 mb-4">Explore all students' performance across topics. Use filters to narrow down results.</p>
+              </div>
+              <div class="mt-auto">
+                <a href="all_reports.html" class="bg-purple-600 text-white py-2 px-6 rounded hover:bg-purple-700 text-center inline-block transition-colors">Open Reports</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- פעילות אחרונה בסוף -->
+        <div class="mt-8">
+          <h2 class="text-xl font-bold mb-4">Recent Activity</h2>
+          <div id="recent-activity-container" class="bg-white dark:bg-slate-700 rounded shadow overflow-hidden">
+            <div class="p-4 text-center">
+              <p>Loading recent activities...</p>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="p-4 text-center bg-slate-300 dark:bg-slate-700 rounded">
+        &copy; 2025 Modular Skills Assessment Tool
+      </footer>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

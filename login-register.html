@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edu Map - Login/Register</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-blue-600 text-white py-4 px-6 shadow-md">
+    <div class="container mx-auto text-center">
+      <h1 class="text-xl font-bold">Edu Map</h1>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto mt-8 p-6 bg-white rounded-lg shadow-md max-w-md">
+
+    <!-- Register Form -->
+    <section id="register-section" class="mb-8">
+      <h2 class="text-2xl font-bold mb-4">Register</h2>
+      <form id="register-form" class="space-y-4">
+        <input type="text" id="register-name" placeholder="Full Name" class="w-full p-2 border border-gray-300 rounded" required>
+        <input type="email" id="register-email" placeholder="Email" class="w-full p-2 border border-gray-300 rounded" required>
+        <input type="password" id="register-password" placeholder="Password" class="w-full p-2 border border-gray-300 rounded" required>
+        <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Register</button>
+      </form>
+    </section>
+
+    <!-- Login Form -->
+    <section id="login-section">
+      <h2 class="text-2xl font-bold mb-4">Login</h2>
+      <form id="login-form" class="space-y-4">
+        <input type="email" id="login-email" placeholder="Email" class="w-full p-2 border border-gray-300 rounded" required>
+        <input type="password" id="login-password" placeholder="Password" class="w-full p-2 border border-gray-300 rounded" required>
+        <button type="submit" class="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700">Login</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-4 px-6 mt-8">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2025 Edu Map. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- External JavaScript File -->
+  <script src="app-scripts.js"></script>
+
+</body>
+</html>

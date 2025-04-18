@@ -1,0 +1,125 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "password": "securepass123",
+      "classes": [
+        {
+          "classId": "MATH1453",
+          "className": "Advanced Calculus",
+          "performance": {
+            "quizzes": [90, 85, 95],
+            "assignments": [88, 92],
+            "finalExam": 96
+          }
+        },
+        {
+          "classId": "PHYS1001",
+          "className": "Classical Mechanics",
+          "performance": {
+            "quizzes": [78, 82, 80],
+            "assignments": [85, 89],
+            "finalExam": 84
+          }
+        }
+      ],
+      "studyPlan": [
+        {
+          "day": "Monday",
+          "tasks": [
+            { "subject": "Advanced Calculus", "task": "Review Derivatives", "duration": "1 hour" },
+            { "subject": "Classical Mechanics", "task": "Solve Newton's Laws Problems", "duration": "45 minutes" }
+          ]
+        },
+        {
+          "day": "Wednesday",
+          "tasks": [
+            { "subject": "Advanced Calculus", "task": "Practice Integrals", "duration": "1.5 hours" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "email": "mb@gmail.com",
+      "password": "1",
+      "classes": [
+        {
+          "classId": "MATH1201",
+          "className": "Linear Algebra",
+          "performance": {
+            "quizzes": [88, 91, 87],
+            "assignments": [90, 94],
+            "finalExam": 89
+          }
+        },
+        {
+          "classId": "MATH2301",
+          "className": "Statistics",
+          "performance": {
+            "quizzes": [60, 60, 60],
+            "assignments": [60, 60],
+            "finalExam": 60
+          }
+        }
+      ],
+      "studyPlan": [
+        {
+          "day": "Tuesday",
+          "tasks": [
+            { "subject": "Linear Algebra", "task": "Practice Matrix Multiplication", "duration": "1 hour" }
+          ]
+        },
+        {
+          "day": "Friday",
+          "tasks": [
+            { "subject": "Statistics", "task": "Review Probability Distributions", "duration": "2 hours" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Alice Johnson",
+      "email": "alice.johnson@example.com",
+      "password": "alicesecure789",
+      "classes": [
+        {
+          "classId": "MATH1453",
+          "className": "Advanced Calculus",
+          "performance": {
+            "quizzes": [95, 97, 96],
+            "assignments": [94, 96],
+            "finalExam": 98
+          }
+        },
+        {
+          "classId": "PHYS1001",
+          "className": "Classical Mechanics",
+          "performance": {
+            "quizzes": [82, 84, 86],
+            "assignments": [88, 90],
+            "finalExam": 87
+          }
+        }
+      ],
+      "studyPlan": [
+        {
+          "day": "Thursday",
+          "tasks": [
+            { "subject": "Advanced Calculus", "task": "Practice Multivariable Calculus", "duration": "2 hours" }
+          ]
+        },
+        {
+          "day": "Sunday",
+          "tasks": [
+            { "subject": "Classical Mechanics", "task": "Revise Energy Conservation", "duration": "1 hour" }
+          ]
+        }
+      ]
+    }
+  ]
+}

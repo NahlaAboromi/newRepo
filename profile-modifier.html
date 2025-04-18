@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edu Map - Profile Settings</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-blue-600 text-white py-4 px-6 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-xl font-bold">Edu Map - Profile Settings</h1>
+      <nav>
+        <ul class="flex space-x-4">
+          <li><a href="login-register.html" class="hover:text-gray-300">Logout</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto mt-8 p-6 bg-white rounded-lg shadow-md max-w-md">
+
+    <!-- Profile Form -->
+    <section id="profile-section">
+      <h2 class="text-2xl font-bold mb-4">Edit Profile</h2>
+      <form id="profile-form" class="space-y-4">
+        <input type="text" id="profile-name" placeholder="Full Name" class="w-full p-2 border border-gray-300 rounded">
+        <input type="email" id="profile-email" placeholder="Email" class="w-full p-2 border border-gray-300 rounded">
+        <input type="password" id="profile-password" placeholder="New Password" class="w-full p-2 border border-gray-300 rounded">
+        <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Save Changes</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-4 px-6 mt-8">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2025 Edu Map. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("profile-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const loggedInUser = JSON.parse(sessionStorage.getItem("loggedInUser"));
+      loggedInUser.name = document.getElementById("profile-name").value.trim();
+      loggedInUser.email = document.getElementById("profile-email").value.trim();
+      loggedInUser.password = document.getElementById("profile-password").value.trim();
+      sessionStorage.setItem("loggedInUser", JSON.stringify(loggedInUser));
+      alert("Profile updated successfully!");
+    });
+
+    // Pre-fill form with current user data
+    document.addEventListener("DOMContentLoaded", () => {
+      const loggedInUser = JSON.parse(sessionStorage.getItem("loggedInUser"));
+      if (loggedInUser) {
+        document.getElementById("profile-name").value = loggedInUser.name;
+        document.getElementById("profile-email").value = loggedInUser.email;
+      }
+    });
+  </script>
+
+</body>
+</html>

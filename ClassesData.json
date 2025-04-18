@@ -1,0 +1,56 @@
+{
+    "classes": [
+      {
+        "id": "MATH1453",
+        "name": "Advanced Calculus",
+        "createdDate": "2025-04-10",
+        "status": "Active",
+        "subjects": ["Physics"],
+        "students": {
+          "total": 18,
+          "completed": 15
+        },
+        "examAverage":100
+
+      },
+      {
+        "id": "MATH1201",
+        "name": "Linear Algebra",
+        "createdDate": "2025-03-05",
+        "status": "Active",
+        "subjects": ["Computer Science"],
+        "students": {
+          "total": 24,
+          "completed": 22
+        },
+        "examAverage": 50
+
+      },
+      {
+        "id": "MATH2301",
+        "name": "Statistics",
+        "createdDate": "2025-02-15",
+        "status": "Active",
+        "subjects": ["Mathematics"],
+        "students": {
+          "total": 21,
+          "completed": 16
+        },
+        "examAverage": 60
+        
+
+      },
+      {
+        "id": "PHYS1001",
+        "name": "Classical Mechanics",
+        "createdDate": "2025-01-20",
+        "status": "Active",
+        "subjects": ["Physics"],
+        "students": {
+          "total": 19,
+          "completed": 17
+        },
+        "examAverage": 76
+      }
+    ]
+  }

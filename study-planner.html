@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edu Map - Study Planner</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header with Navigation Menu -->
+  <header class="bg-blue-600 text-white py-4 px-6 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-xl font-bold">Edu Map</h1>
+      <nav>
+        <ul class="flex space-x-4">
+          <li><a href="dashboard.html" class="hover:text-gray-300">Dashboard</a></li>
+          <li><a href="study-planner.html" class="hover:text-gray-300">Study Planner</a></li>
+          <li><a href="profile-modifier.html" class="hover:text-gray-300">Profile</a></li>
+          <li><a href="login-register.html" class="hover:text-gray-300">Logout</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto mt-8 p-6 bg-white rounded-lg shadow-md max-w-4xl">
+    <h2 class="text-2xl font-bold mb-4">Weekly Study Planner</h2>
+    <div id="planner-container" class="space-y-4">
+      <!-- Days of the week -->
+      <div id="monday" class="bg-gray-100 p-4 rounded-lg">
+        <h3 class="font-bold">Monday</h3>
+        <ul id="monday-tasks" class="list-disc ml-6"></ul>
+        <button class="mt-2 bg-blue-600 text-white py-1 px-2 rounded hover:bg-blue-700" onclick="addTask('Monday')">Add Task</button>
+      </div>
+      <div id="tuesday" class="bg-gray-100 p-4 rounded-lg">
+        <h3 class="font-bold">Tuesday</h3>
+        <ul id="tuesday-tasks" class="list-disc ml-6"></ul>
+        <button class="mt-2 bg-blue-600 text-white py-1 px-2 rounded hover:bg-blue-700" onclick="addTask('Tuesday')">Add Task</button>
+      </div>
+      <div id="wednesday" class="bg-gray-100 p-4 rounded-lg">
+        <h3 class="font-bold">Wednesday</h3>
+        <ul id="wednesday-tasks" class="list-disc ml-6"></ul>
+        <button class="mt-2 bg-blue-600 text-white py-1 px-2 rounded hover:bg-blue-700" onclick="addTask('Wednesday')">Add Task</button>
+      </div>
+      <div id="thursday" class="bg-gray-100 p-4 rounded-lg">
+        <h3 class="font-bold">Thursday</h3>
+        <ul id="thursday-tasks" class="list-disc ml-6"></ul>
+        <button class="mt-2 bg-blue-600 text-white py-1 px-2 rounded hover:bg-blue-700" onclick="addTask('Thursday')">Add Task</button>
+      </div>
+      <div id="friday" class="bg-gray-100 p-4 rounded-lg">
+        <h3 class="font-bold">Friday</h3>
+        <ul id="friday-tasks" class="list-disc ml-6"></ul>
+        <button class="mt-2 bg-blue-600 text-white py-1 px-2 rounded hover:bg-blue-700" onclick="addTask('Friday')">Add Task</button>
+      </div>
+      <div id="saturday" class="bg-gray-100 p-4 rounded-lg">
+        <h3 class="font-bold">Saturday</h3>
+        <ul id="saturday-tasks" class="list-disc ml-6"></ul>
+        <button class="mt-2 bg-blue-600 text-white py-1 px-2 rounded hover:bg-blue-700" onclick="addTask('Saturday')">Add Task</button>
+      </div>
+      <div id="sunday" class="bg-gray-100 p-4 rounded-lg">
+        <h3 class="font-bold">Sunday</h3>
+        <ul id="sunday-tasks" class="list-disc ml-6"></ul>
+        <button class="mt-2 bg-blue-600 text-white py-1 px-2 rounded hover:bg-blue-700" onclick="addTask('Sunday')">Add Task</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-4 px-6 mt-8">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2025 Edu Map. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript for Functionality -->
+  <script>
+    // Initialize global variables
+    let loggedInUser = null;
+
+    // Logout functionality
+    document.getElementById("logout-button")?.addEventListener("click", () => {
+      sessionStorage.removeItem("loggedInUser");
+      window.location.href = "login-register.html";
+    });
+
+    // Load user data from sessionStorage
+    document.addEventListener("DOMContentLoaded", () => {
+      const storedUser = sessionStorage.getItem("loggedInUser");
+      if (storedUser) {
+        loggedInUser = JSON.parse(storedUser);
+        console.log("Loaded user data:", loggedInUser);
+        loadStudyPlanner(loggedInUser);
+      } else {
+        alert("You must log in first.");
+        window.location.href = "login-register.html";
+      }
+    });
+
+    // Function to load the study planner
+    function loadStudyPlanner(user) {
+      const daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+      daysOfWeek.forEach(day => {
+        const dayPlan = user.studyPlan.find(plan => plan.day === day);
+        const taskList = document.getElementById(`${day.toLowerCase()}-tasks`);
+        if (dayPlan && dayPlan.tasks.length > 0) {
+          dayPlan.tasks.forEach(task => {
+            taskList.innerHTML += `<li>${task.subject}: ${task.task} (${task.duration})</li>`;
+          });
+        } else {
+          taskList.innerHTML = "<li>No tasks scheduled.</li>";
+        }
+      });
+    }
+
+    // Function to add a task
+    function addTask(day) {
+      const subject = prompt("Enter the subject (e.g., 'Linear Algebra'):");
+      const task = prompt("Enter your task (e.g., 'Practice Matrices'):");
+      const duration = prompt("Enter the duration (e.g., '1 hour'):");
+
+      if (subject && task && duration) {
+        const newTask = { subject, task, duration };
+        const dayPlan = loggedInUser.studyPlan.find(plan => plan.day === day);
+
+        if (dayPlan) {
+          dayPlan.tasks.push(newTask);
+        } else {
+          loggedInUser.studyPlan.push({ day, tasks: [newTask] });
+        }
+
+        sessionStorage.setItem("loggedInUser", JSON.stringify(loggedInUser));
+        console.log("Updated study plan:", loggedInUser.studyPlan);
+
+        // Reload the planner
+        loadStudyPlanner(loggedInUser);
+      } else {
+        alert("All fields are required!");
+      }
+    }
+  </script>
+</body>
+</html>

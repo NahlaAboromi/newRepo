@@ -1,0 +1,302 @@
+[
+    {
+      "id": 1,
+      "name": "Eli Avrahami",
+      "topic": "Physics",
+      "scores": {
+        "Kinematics": 91,
+        "Energy": 80,
+        "Forces": 71
+      }
+    },
+    {
+      "id": 2,
+      "name": "Daniel Levi",
+      "topic": "Physics",
+      "scores": {
+        "Kinematics": 83,
+        "Energy": 67,
+        "Forces": 67
+      }
+    },
+    {
+      "id": 3,
+      "name": "Tamar Rosen",
+      "topic": "Mathematics",
+      "scores": {
+        "Algebra": 97,
+        "Geometry": 69,
+        "Statistics": 57
+      }
+    },
+    {
+      "id": 4,
+      "name": "Maya Malka",
+      "topic": "Computer Science",
+      "scores": {
+        "Loops": 59,
+        "Conditions": 62,
+        "Functions": 71
+      }
+    },
+    {
+      "id": 5,
+      "name": "Tamar Avrahami",
+      "topic": "Computer Science",
+      "scores": {
+        "Loops": 50,
+        "Conditions": 64,
+        "Functions": 92
+      }
+    },
+    {
+      "id": 6,
+      "name": "Shira Ashkenazi",
+      "topic": "Physics",
+      "scores": {
+        "Kinematics": 79,
+        "Energy": 52,
+        "Forces": 89
+      }
+    },
+    {
+      "id": 7,
+      "name": "Noa Avital",
+      "topic": "Physics",
+      "scores": {
+        "Kinematics": 62,
+        "Energy": 64,
+        "Forces": 64
+      }
+    },
+    {
+      "id": 8,
+      "name": "Itay Azulay",
+      "topic": "Mathematics",
+      "scores": {
+        "Algebra": 51,
+        "Geometry": 82,
+        "Statistics": 90
+      }
+    },
+    {
+      "id": 9,
+      "name": "Naama Malka",
+      "topic": "Computer Science",
+      "scores": {
+        "Loops": 52,
+        "Conditions": 83,
+        "Functions": 82
+      }
+    },
+    {
+      "id": 10,
+      "name": "Noa Peretz",
+      "topic": "Computer Science",
+      "scores": {
+        "Loops": 94,
+        "Conditions": 99,
+        "Functions": 66
+      }
+    },
+    {
+      "id": 11,
+      "name": "Hila Kaplan",
+      "topic": "Physics",
+      "scores": {
+        "Kinematics": 74,
+        "Energy": 54,
+        "Forces": 76
+      }
+    },
+    {
+      "id": 12,
+      "name": "Omer Levi",
+      "topic": "Mathematics",
+      "scores": {
+        "Algebra": 58,
+        "Geometry": 58,
+        "Statistics": 52
+      }
+    },
+    {
+      "id": 13,
+      "name": "Dana Azulay",
+      "topic": "Physics",
+      "scores": {
+        "Kinematics": 89,
+        "Energy": 65,
+        "Forces": 69
+      }
+    },
+    {
+      "id": 14,
+      "name": "Or Ashkenazi",
+      "topic": "Physics",
+      "scores": {
+        "Kinematics": 51,
+        "Energy": 98,
+        "Forces": 55
+      }
+    },
+    {
+      "id": 15,
+      "name": "Tamar David",
+      "topic": "Mathematics",
+      "scores": {
+        "Algebra": 100,
+        "Geometry": 69,
+        "Statistics": 91
+      }
+    },
+    {
+      "id": 16,
+      "name": "Naama Turgeman",
+      "topic": "Physics",
+      "scores": {
+        "Kinematics": 54,
+        "Energy": 82,
+        "Forces": 67
+      }
+    },
+    {
+      "id": 17,
+      "name": "Roi Rosen",
+      "topic": "Physics",
+      "scores": {
+        "Kinematics": 92,
+        "Energy": 76,
+        "Forces": 62
+      }
+    },
+    {
+      "id": 18,
+      "name": "Noa Azulay",
+      "topic": "Computer Science",
+      "scores": {
+        "Loops": 65,
+        "Conditions": 74,
+        "Functions": 81
+      }
+    },
+    {
+      "id": 19,
+      "name": "Naama Shapiro",
+      "topic": "Computer Science",
+      "scores": {
+        "Loops": 98,
+        "Conditions": 96,
+        "Functions": 73
+      }
+    },
+    {
+      "id": 20,
+      "name": "Dana Mizrahi",
+      "topic": "Mathematics",
+      "scores": {
+        "Algebra": 60,
+        "Geometry": 81,
+        "Statistics": 72
+      }
+    },
+    {
+      "id": 21,
+      "name": "Yael Avital",
+      "topic": "Computer Science",
+      "scores": {
+        "Loops": 78,
+        "Conditions": 65,
+        "Functions": 70
+      }
+    },
+    {
+      "id": 22,
+      "name": "Adam Sharabi",
+      "topic": "Mathematics",
+      "scores": {
+        "Algebra": 81,
+        "Geometry": 67,
+        "Statistics": 67
+      }
+    },
+    {
+      "id": 23,
+      "name": "Eli Shapiro",
+      "topic": "Physics",
+      "scores": {
+        "Kinematics": 97,
+        "Energy": 66,
+        "Forces": 95
+      }
+    },
+    {
+      "id": 24,
+      "name": "Dana Cohen",
+      "topic": "Physics",
+      "scores": {
+        "Kinematics": 97,
+        "Energy": 100,
+        "Forces": 84
+      }
+    },
+    {
+      "id": 25,
+      "name": "Nadav Mizrahi",
+      "topic": "Computer Science",
+      "scores": {
+        "Loops": 78,
+        "Conditions": 64,
+        "Functions": 56
+      }
+    },
+    {
+      "id": 26,
+      "name": "Naama Rosen",
+      "topic": "Computer Science",
+      "scores": {
+        "Loops": 79,
+        "Conditions": 80,
+        "Functions": 54
+      }
+    },
+    {
+      "id": 27,
+      "name": "Nadav David",
+      "topic": "Physics",
+      "scores": {
+        "Kinematics": 53,
+        "Energy": 97,
+        "Forces": 63
+      }
+    },
+    {
+      "id": 28,
+      "name": "Itay Cohen",
+      "topic": "Computer Science",
+      "scores": {
+        "Loops": 89,
+        "Conditions": 100,
+        "Functions": 91
+      }
+    },
+    {
+      "id": 29,
+      "name": "Adam Ashkenazi",
+      "topic": "Physics",
+      "scores": {
+        "Kinematics": 77,
+        "Energy": 74,
+        "Forces": 94
+      }
+    },
+    {
+      "id": 30,
+      "name": "Itay Segal",
+      "topic": "Mathematics",
+      "scores": {
+        "Algebra": 50,
+        "Geometry": 65,
+        "Statistics": 70
+      }
+    }
+  ]

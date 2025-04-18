@@ -1,0 +1,25 @@
+{
+    "recentActivity": [
+      {
+        "type": "success",
+        "message": "New class MATH1453 has been created",
+        "time": "Today, 10:30 AM"
+      },
+      {
+        "type": "exam",
+        "message": "Student Michael Chen completed MATH2260 exam",
+        "time": "Today, 9:45 AM"
+      },
+      {
+        "type": "message",
+        "message": "You received a message from Student Eli Avrahami",
+        "time": "Yesterday, 3:20 PM"
+      },
+      {
+        "type": "schedule",
+        "message": "MATH3350 class is scheduled for tomorrow",
+        "time": "Yesterday, 2:15 PM"
+      }
+    ]
+  }
+  

@@ -1,0 +1,30 @@
+{
+    "Advanced Calculus": [
+      {
+        "question": "What is the derivative of x^2?",
+        "options": ["2x", "x", "x^2", "2"],
+        "correctAnswer": "2x",
+        "explanation": "The derivative of x^2 is calculated using the power rule: d/dx[x^n] = n * x^(n-1). Here, n = 2, so the derivative is 2x."
+      },
+      {
+        "question": "What is the integral of 1/x?",
+        "options": ["ln(x)", "x^2", "1/x^2", "e^x"],
+        "correctAnswer": "ln(x)",
+        "explanation": "The integral of 1/x is ln(x) + C, where C is the constant of integration. This is a standard result in calculus."
+      }
+    ],
+    "Linear Algebra": [
+      {
+        "question": "What is the determinant of a 2x2 matrix [[a, b], [c, d]]?",
+        "options": ["ad - bc", "ab + cd", "a + d", "b - c"],
+        "correctAnswer": "ad - bc",
+        "explanation": "The determinant of a 2x2 matrix [[a, b], [c, d]] is calculated as (a * d) - (b * c)."
+      },
+      {
+        "question": "What is the rank of a matrix?",
+        "options": ["Number of rows", "Number of columns", "Number of non-zero rows", "Number of zeros"],
+        "correctAnswer": "Number of non-zero rows",
+        "explanation": "The rank of a matrix is the maximum number of linearly independent rows (or columns). It is determined by counting the non-zero rows in its row echelon form."
+      }
+    ]
+  }

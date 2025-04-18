@@ -1,0 +1,20 @@
+{
+    "notifications": [
+      {
+        "type": "success",
+        "title": "New class MATH1453 has been created successfully",
+        "time": "5 minutes ago"
+      },
+      {
+        "type": "exam",
+        "title": "Student from class MATH1453 has completed the exam",
+        "time": "Today, 10:45 AM"
+      },
+      {
+        "type": "message",
+        "title": "You received a message from Student Eli Avrahami",
+        "time": "Yesterday, 3:20 PM"
+      }
+    ]
+  }
+  

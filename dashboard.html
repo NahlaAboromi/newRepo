@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edu Map - Student Dashboard</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header with Navigation Menu -->
+  <header class="bg-blue-600 text-white py-4 px-6 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-xl font-bold">Edu Map</h1>
+      <nav>
+        <ul class="flex space-x-4">
+          <li><a href="dashboard.html" class="hover:text-gray-300">Dashboard</a></li>
+          <li><a href="study-planner.html" class="hover:text-gray-300">Study Planner</a></li>
+          <li><a href="profile-modifier.html" class="hover:text-gray-300">Profile</a></li>
+          <li><a href="login-register.html" class="hover:text-gray-300">Logout</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto mt-8 p-6 bg-white rounded-lg shadow-md max-w-4xl">
+
+    <!-- Skill Map Section -->
+    <section id="skill-map" class="mb-8">
+      <h2 class="text-2xl font-bold mb-4">Skill Map</h2>
+      <div id="skill-cards" class="grid grid-cols-3 gap-4">
+        <!-- Skill cards will be dynamically generated here -->
+      </div>
+    </section>
+
+    <!-- Progress Tracking Section -->
+    <section id="progress-tracking" class="mb-8">
+      <h2 class="text-2xl font-bold mb-4">Progress Over Time</h2>
+      <canvas id="progress-chart" class="w-full h-64"></canvas>
+    </section>
+
+    <!-- Recommendations Section -->
+    <section id="recommendations" class="mb-8">
+      <h2 class="text-2xl font-bold mb-4">Recommendations</h2>
+      <div id="recommendation-list" class="space-y-4">
+        <!-- Recommendation cards will be displayed here -->
+      </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="quiz-section" class="hidden">
+      <h2 class="text-2xl font-bold mb-4">Take a Quiz</h2>
+      <form id="quiz-form" class="space-y-4">
+        <!-- Questions will be dynamically generated here -->
+        <button type="submit" class="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700">Submit Quiz</button>
+      </form>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results-section" class="hidden">
+      <h2 class="text-2xl font-bold mb-4">Quiz Results</h2>
+      <div id="results-container" class="space-y-4">
+        <!-- Results will be displayed here -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-4 px-6 mt-8">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2025 Edu Map. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- External JavaScript File -->
+  <script src="app-scripts.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,353 @@
+{
+  "physics": {
+    "easy": {
+      "title": "Physics - Easy Exam",
+      "questions": [
+        {
+          "question": "What is the unit of force?",
+          "options": ["Watt", "Newton", "Joule", "Volt"],
+          "correctAnswer": "Newton"
+        },
+        {
+          "question": "Which law states that every action has an equal and opposite reaction?",
+          "options": ["Newton's First Law", "Newton's Second Law", "Newton's Third Law", "Law of Conservation of Energy"],
+          "correctAnswer": "Newton's Third Law"
+        },
+        {
+          "question": "What is the speed of light in vacuum (approximate)?",
+          "options": ["3 × 10⁸ m/s", "2 × 10⁸ m/s", "3 × 10⁶ m/s", "3 × 10⁵ m/s"],
+          "correctAnswer": "3 × 10⁸ m/s"
+        },
+        {
+          "question": "What happens to the mass of an object when it moves at speeds close to the speed of light?",
+          "options": ["It decreases", "It increases", "It remains constant", "It becomes zero"],
+          "correctAnswer": "It increases"
+        },
+        {
+          "question": "Which of these is NOT a basic force in nature?",
+          "options": ["Gravitational force", "Electromagnetic force", "Strong nuclear force", "Centrifugal force"],
+          "correctAnswer": "Centrifugal force"
+        },
+        {
+          "question": "What is the SI unit of electric current?",
+          "options": ["Volt", "Ampere", "Ohm", "Watt"],
+          "correctAnswer": "Ampere"
+        },
+        {
+          "question": "What is the formula for kinetic energy?",
+          "options": ["mgh", "mv", "½mv²", "ma"],
+          "correctAnswer": "½mv²"
+        },
+        {
+          "question": "Which circuit element resists the flow of electric current?",
+          "options": ["Battery", "Wire", "Resistor", "Capacitor"],
+          "correctAnswer": "Resistor"
+        },
+        {
+          "question": "What is the phenomenon where light bends when passing from one medium to another?",
+          "options": ["Reflection", "Refraction", "Diffraction", "Dispersion"],
+          "correctAnswer": "Refraction"
+        },
+        {
+          "question": "What type of electromagnetic wave has the longest wavelength?",
+          "options": ["X-rays", "Gamma rays", "Radio waves", "Ultraviolet waves"],
+          "correctAnswer": "Radio waves"
+        }
+      ]
+    },
+    "medium": {
+      "title": "Physics - Medium Exam",
+      "questions": [
+        {
+          "question": "What is the work done when a force of 10 N moves an object 2 m?",
+          "options": ["20 J", "5 J", "10 J", "15 J"],
+          "correctAnswer": "20 J"
+        },
+        {
+          "question": "What is Ohm's Law?",
+          "options": ["V = IR", "P = VI", "V = P/I", "I = VR"],
+          "correctAnswer": "V = IR"
+        },
+        {
+          "question": "Which of the following is a scalar quantity?",
+          "options": ["Velocity", "Displacement", "Acceleration", "Speed"],
+          "correctAnswer": "Speed"
+        },
+        {
+          "question": "In which medium does sound travel the fastest?",
+          "options": ["Air", "Water", "Steel", "Vacuum"],
+          "correctAnswer": "Steel"
+        },
+        {
+          "question": "What is the frequency of a wave with period 0.01s?",
+          "options": ["10 Hz", "100 Hz", "50 Hz", "0.1 Hz"],
+          "correctAnswer": "100 Hz"
+        }
+      ]
+    },
+    "hard": {
+      "title": "Physics - Hard Exam",
+      "questions": [
+        {
+          "question": "What is the escape velocity from Earth?",
+          "options": ["11.2 km/s", "9.8 m/s²", "7.9 km/s", "3.6 km/s"],
+          "correctAnswer": "11.2 km/s"
+        },
+        {
+          "question": "What is Planck's constant?",
+          "options": ["6.626×10⁻³⁴ Js", "3×10⁸ m/s", "1.6×10⁻¹⁹ C", "9.8 m/s²"],
+          "correctAnswer": "6.626×10⁻³⁴ Js"
+        },
+        {
+          "question": "What does E=mc² represent?",
+          "options": ["Energy-mass equivalence", "Electromagnetic law", "Hooke's law", "Kinetic theory"],
+          "correctAnswer": "Energy-mass equivalence"
+        },
+        {
+          "question": "What is the angular momentum of a body with moment of inertia I and angular velocity ω?",
+          "options": ["I/ω", "I×ω", "ω/I", "I+ω"],
+          "correctAnswer": "I×ω"
+        },
+        {
+          "question": "What is the magnetic field unit?",
+          "options": ["Tesla", "Volt", "Weber", "Ampere"],
+          "correctAnswer": "Tesla"
+        }
+      ]
+    }
+  },
+  "computerscience": {
+    "easy": {
+      "title": "Computer Science - Easy Exam",
+      "questions": [
+        {
+          "question": "What does CPU stand for?",
+          "options": ["Central Processing Unit", "Computer Personal Unit", "Central Process Utility", "Core Processing Unit"],
+          "correctAnswer": "Central Processing Unit"
+        },
+        {
+          "question": "Which of these is a programming language?",
+          "options": ["HTTP", "HTML", "HTTPS", "Python"],
+          "correctAnswer": "Python"
+        },
+        {
+          "question": "What is the basic unit of information in computing?",
+          "options": ["Bit", "Byte", "Megabyte", "Kilobyte"],
+          "correctAnswer": "Bit"
+        },
+        {
+          "question": "What symbol is used for multiplication in most programming languages?",
+          "options": ["×", "⋅", "*", "•"],
+          "correctAnswer": "*"
+        },
+        {
+          "question": "Which data structure operates on a Last-In-First-Out principle?",
+          "options": ["Queue", "Stack", "Array", "Tree"],
+          "correctAnswer": "Stack"
+        },
+        {
+          "question": "What is the file extension for a JavaScript file?",
+          "options": [".java", ".js", ".script", ".jsx"],
+          "correctAnswer": ".js"
+        },
+        {
+          "question": "Which of these is NOT a web browser?",
+          "options": ["Chrome", "Firefox", "Excel", "Safari"],
+          "correctAnswer": "Excel"
+        },
+        {
+          "question": "What does HTML stand for?",
+          "options": ["Hyper Text Markup Language", "High Tech Modern Language", "Hyper Technical Markup Language", "Home Tool Markup Language"],
+          "correctAnswer": "Hyper Text Markup Language"
+        },
+        {
+          "question": "Which logical operator means 'AND' in most programming languages?",
+          "options": ["&", "&&", "+", "||"],
+          "correctAnswer": "&&"
+        },
+        {
+          "question": "What is the correct HTML tag for the largest heading?",
+          "options": ["<h1>", "<heading>", "<head>", "<h6>"],
+          "correctAnswer": "<h1>"
+        }
+      ]
+    },
+    "medium": {
+      "title": "Computer Science - Medium Exam",
+      "questions": [
+        {
+          "question": "What is the time complexity of binary search?",
+          "options": ["O(n)", "O(log n)", "O(n log n)", "O(1)"],
+          "correctAnswer": "O(log n)"
+        },
+        {
+          "question": "Which of the following is a dynamic data structure?",
+          "options": ["Array", "Linked List", "Stack", "Queue"],
+          "correctAnswer": "Linked List"
+        },
+        {
+          "question": "What is a loop that never ends called?",
+          "options": ["Infinite loop", "Deadlock", "Recursion", "Iteration"],
+          "correctAnswer": "Infinite loop"
+        },
+        {
+          "question": "Which keyword is used to define a class in Java?",
+          "options": ["define", "class", "object", "structure"],
+          "correctAnswer": "class"
+        },
+        {
+          "question": "What is the binary representation of decimal 5?",
+          "options": ["101", "110", "100", "111"],
+          "correctAnswer": "101"
+        }
+      ]
+    },
+    "hard": {
+      "title": "Computer Science - Hard Exam",
+      "questions": [
+        {
+          "question": "What does the acronym SQL stand for?",
+          "options": ["Structured Query Language", "System Question Language", "Simple Query Logic", "Structured Question Language"],
+          "correctAnswer": "Structured Query Language"
+        },
+        {
+          "question": "What is the main function of an operating system?",
+          "options": ["Browsing the web", "Managing hardware resources", "Compiling code", "Editing images"],
+          "correctAnswer": "Managing hardware resources"
+        },
+        {
+          "question": "What is polymorphism in OOP?",
+          "options": ["Ability to take multiple forms", "Overloading a function", "Reusing code", "Inheritance of traits"],
+          "correctAnswer": "Ability to take multiple forms"
+        },
+        {
+          "question": "Which sorting algorithm has the best average time complexity?",
+          "options": ["Bubble Sort", "Selection Sort", "Quick Sort", "Insertion Sort"],
+          "correctAnswer": "Quick Sort"
+        },
+        {
+          "question": "What is a race condition?",
+          "options": ["A performance issue", "Two threads accessing shared data simultaneously", "A syntax error", "A memory leak"],
+          "correctAnswer": "Two threads accessing shared data simultaneously"
+        }
+      ]
+    }
+  },
+  "mathematics": {
+    "easy": {
+      "title": "Mathematics - Easy Exam",
+      "questions": [
+        {
+          "question": "What is 2 + 2?",
+          "options": ["3", "4", "5", "6"],
+          "correctAnswer": "4"
+        },
+        {
+          "question": "What is the square root of 9?",
+          "options": ["2", "3", "4", "5"],
+          "correctAnswer": "3"
+        },
+        {
+          "question": "Simplify: 4x + 2x",
+          "options": ["2x", "6x", "8x", "4x²"],
+          "correctAnswer": "6x"
+        },
+        {
+          "question": "What is the value of π (approx)?",
+          "options": ["3.14", "2.71", "1.41", "1.62"],
+          "correctAnswer": "3.14"
+        },
+        {
+          "question": "What is 10 divided by 2?",
+          "options": ["2", "4", "5", "12"],
+          "correctAnswer": "5"
+        },
+        {
+          "question": "What is the opposite of addition?",
+          "options": ["Multiplication", "Division", "Subtraction", "Exponentiation"],
+          "correctAnswer": "Subtraction"
+        },
+        {
+          "question": "Round 3.7 to the nearest whole number",
+          "options": ["3", "4", "3.5", "3.7"],
+          "correctAnswer": "4"
+        },
+        {
+          "question": "What is 5 squared?",
+          "options": ["10", "15", "20", "25"],
+          "correctAnswer": "25"
+        },
+        {
+          "question": "What is the result of 6 × 7?",
+          "options": ["36", "42", "48", "54"],
+          "correctAnswer": "42"
+        },
+        {
+          "question": "What number is missing: 3, 6, __, 12?",
+          "options": ["7", "8", "9", "10"],
+          "correctAnswer": "9"
+        }
+      ]
+    },
+    "medium": {
+      "title": "Mathematics - Medium Exam",
+      "questions": [
+        {
+          "question": "Solve for x: 2x + 5 = 15",
+          "options": ["10", "5", "15", "2"],
+          "correctAnswer": "5"
+        },
+        {
+          "question": "What is the quadratic formula?",
+          "options": ["(-b ± √(b²-4ac))/2a", "b² - 4ac", "x = -b/a", "a² + b² = c²"],
+          "correctAnswer": "(-b ± √(b²-4ac))/2a"
+        },
+        {
+          "question": "Calculate the area of a circle with radius 4",
+          "options": ["16π", "8π", "12π", "4π"],
+          "correctAnswer": "16π"
+        },
+        {
+          "question": "What is the derivative of x²?",
+          "options": ["x", "2x", "x²", "1"],
+          "correctAnswer": "2x"
+        },
+        {
+          "question": "Simplify: (3x² + 2x - 1) - (x² - 3x + 4)",
+          "options": ["2x² + 5x - 5", "2x² - x - 3", "4x² + 5x + 3", "2x² + x - 5"],
+          "correctAnswer": "2x² + 5x - 5"
+        }
+      ]
+    },
+    "hard": {
+      "title": "Mathematics - Hard Exam",
+      "questions": [
+        {
+          "question": "Find the values of x where f(x) = x³ - 6x² + 11x - 6 equals zero",
+          "options": ["x = 1, 2, 3", "x = -1, -2, -3", "x = 0, 1, 2", "x = 2, 3, 4"],
+          "correctAnswer": "x = 1, 2, 3"
+        },
+        {
+          "question": "Solve the differential equation: dy/dx = 2xy with y(0) = 1",
+          "options": ["y = e^(x²)", "y = x²", "y = 2x", "y = e^(x)"],
+          "correctAnswer": "y = e^(x²)"
+        },
+        {
+          "question": "Calculate the limit as x approaches infinity: lim(x→∞) (3x²+2x-1)/(x²+x+4)",
+          "options": ["3", "2", "1", "Infinity"],
+          "correctAnswer": "3"
+        },
+        {
+          "question": "Find the inverse of matrix [[2,1],[3,4]]",
+          "options": ["[[4,-1],[-3,2]]", "[[4,3],[-1,2]]", "[[2,-1],[-3,4]]", "[[4,1],[-3,2]]"],
+          "correctAnswer": "[[4,-1],[-3,2]]"
+        },
+        {
+          "question": "Solve the system: 2x + y + z = 4, x - y + z = 0, 3x + 2y - z = 3",
+          "options": ["x=1, y=0, z=2", "x=1, y=1, z=1", "x=2, y=1, z=0", "x=0, y=1, z=2"],
+          "correctAnswer": "x=1, y=0, z=2"
+        }
+      ]
+    }
+  }
+}
